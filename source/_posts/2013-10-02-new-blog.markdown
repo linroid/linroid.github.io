@@ -1,0 +1,11 @@
+---
+layout: post
+title: "新家"
+date: 2013-10-02 07:58
+comments: true
+categories: 随笔
+---
+这个Blog是放在[Github Pages](http://pages.github.com/)的。  
+由于我的懒惰，好久没写博客了，尝试用Markdown写博客的快感。  
+这个博客主要用于记录我学习中的一些笔记以及生活中的一些琐事  
+想起一起新的网名，想不到其他适合我的了，就暂时用DiaosLin吧  
