@@ -4,8 +4,8 @@
 
 # Site
 title: linroid's blog
-subtitle: Making an awesome app!
-description: 
+subtitle: Make an awesome app!
+description: I'm linroid, I love coding.
 author: linroid
 email: linroid@gmail.com
 language: en_US
@@ -81,6 +81,11 @@ disqus_shortname: linroid
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
 theme: yilia
 exclude_generator:
+#npm install hexo-generator-sitemap
+#npm install hexo-generator-feed --save
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

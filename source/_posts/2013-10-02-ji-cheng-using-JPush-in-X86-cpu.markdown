@@ -3,7 +3,7 @@ layout: post
 title: "集成极光推送后无法无法在genymotion模拟器上运行"
 date: 2013-08-08 11:01
 comments: true
-categories: android
+categories: Android
 ---
 
 #Log信息： 

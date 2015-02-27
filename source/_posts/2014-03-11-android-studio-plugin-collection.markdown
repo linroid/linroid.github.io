@@ -3,7 +3,7 @@ layout: post
 title: "Android Studio一些插件的介绍"
 date: 2014-03-11 23:22
 comments: true
-categories: Android-Studio
+categories: Android
 ---
 
 以下是一些Android Studio插件的介绍,虽然Android Studio的插件没有Eclipse插件那样丰富，不过利用它们，依然可以为开发工作带来许多方便   
