@@ -18,5 +18,5 @@ tags: Products
 - [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 - [SystemBarTint](https://github.com/jgilfelt/SystemBarTint)
 - [Timber](http://jakewharton.github.io/timber/)
-
-把源码放到Github上了,有兴趣的就看看把:):[Github地址](http://github.com/Sky31Radio)
+- [DiscreteSeekBar](https://github.com/AnderWeb/discreteSeekBar)
+把源码放到Github上了,有兴趣的就看看把:):[Github地址](http://github.com/linroid/Sky31Radio)
