@@ -2,7 +2,7 @@ title: About me
 date: 2014-12-20 02:24:00
 ---
 ##Summary
- - 大三汪一只 [我的简历](http://7u2rtn.com1.z0.glb.clouddn.com/Android开发实习生 - 张林.pdf)。
+ - 大三汪一只 [我的简历](http://7u2rtn.com1.z0.glb.clouddn.com/张林的简历.pdf)。
  - 遇到小而美的App完全把持不住，会把玩很久,任性！
  - 开源爱好者，希望有一天自己也能为开源社区作出贡献
  - 之前玩php(嗯，世界上最好的语言！)，后来跳入Android的坑里。对于[Jake Wharthon](http://jakewharton.com/) [Chris Banes](https://chris.banes.me/) [Romain Guy](http://www.curious-creature.com/about/) [碎星](http://imid.me/) [代码家](http://www.daimajia.com/)这些大牛，跪舔( ˘･з･)
