@@ -5,7 +5,7 @@
 # Site
 title: linroid
 subtitle: Make an awesome app!
-description: I'm linroid, I love coding.
+description: I'm linroid,I love
 author: linroid
 email: linroid@gmail.com
 language: en_US
@@ -83,13 +83,13 @@ theme: yilia
 exclude_generator:
 #npm install hexo-generator-sitemap
 #npm install hexo-generator-feed --save
-plugins:
-- hexo-generator-feed
-- hexo-generator-sitemap
-
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repo: git@github.com:linroid/linroid.github.io.git
   branch: master
