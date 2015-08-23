@@ -1,9 +1,9 @@
-title: About me
+ititle: About me
 date: 2014-12-20 02:24:00
 ---
 ##Summary
  - 阿里巴巴2015年客户端开发实习生
- - 大三汪一只 [我的简历](http://linroid.com/resume.pdf)。
+ - 大三汪一只
  - 遇到小而美的App完全把持不住，会把玩很久,任性！
  - 开源爱好者，希望有一天自己也能为开源社区作出贡献
  - 之前玩php(嗯，世界上最好的语言！)，后来跳入Android的坑里。对于 [Jake Wharthon](http://jakewharton.com/)、 [Chris Banes](https://chris.banes.me/) 、[Romain Guy](http://www.curious-creature.com/about/) 、[碎星](http://imid.me/)、 [代码家](http://www.daimajia.com/) 这些大牛，跪舔( ˘･з･)
@@ -11,6 +11,6 @@ date: 2014-12-20 02:24:00
 
 ##Contact me
  - Email : [linroid@gmail.com](mailto:linroid@gmail.com)
- - Google+ : [+张林](https://plus.google.com/114352094187316162338/posts)
+ - Google+ : [+张林(linroid)](https://plus.google.com/114352094187316162338/posts)
  - 新浪微博 : [@你是个好人啦](http://weibo.com/ekstone)
  - GitHub : [linroid](http://github.com/linroid)

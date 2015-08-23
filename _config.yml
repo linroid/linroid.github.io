@@ -4,8 +4,8 @@
 
 # Site
 title: linroid
-subtitle: Make an awesome app!
-description: I'm linroid,I love
+subtitle: 为开发小而美的应用奋斗!
+description: I'm linroid,I love coding.
 author: linroid
 email: linroid@gmail.com
 language: en_US
@@ -90,6 +90,8 @@ feed:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:linroid/linroid.github.io.git
-  branch: master
+    type: git
+    repo: https://github.com/linroid/linroid.github.io.git
+    type: git
+    repo: https://gitcafe.com/linroid/linroid.git
+    branch: gitcafe-pages
