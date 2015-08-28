@@ -3,7 +3,8 @@ layout: post
 title: "[Android学习笔记] Overlaying Action Bar"
 date: 2013-10-01 23:16
 comments: true
-categories: Android学习
+tags: Android
+categories: 学习笔记
 ---
 默认情况下，`Action Bar`出现在窗口顶部。有时为了让屏幕显示更多的内容，需要隐藏`Action Bar`（如向下滑动列表时隐藏，向上滑动列表时显示）。  
 

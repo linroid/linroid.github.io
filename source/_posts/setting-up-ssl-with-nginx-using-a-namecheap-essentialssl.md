@@ -1,8 +1,8 @@
 title: 使用NameCheap的SSL证书
 date: 2014-12-21 01:14:35
 tags:
-	- Nginx
-	- 域名
+	- Blog
+categories: 瞎折腾
 ---
 ![使用NameCheap的SSL证书](/media/setting-up-ssl-with-nginx-using-a-namecheap-essentialssl/20141221121928.png)
 利用之前申请了Github的学生礼包免费注册了[alwen.me]域名，另外一年免费的ssl证书也申请了.
@@ -16,7 +16,9 @@ tags:
 - Your PositiveSSL Certificate - alwen_me.crt
 
 需要将这几个密钥放到一个文件中:
-`cat alwen_me.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > ssl_bundle.cer`
+```
+ cat alwen_me.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > ssl_bundle.cer
+```
 接下来就是设置nginx配置文件开启ssl了:
 ```conf
 # HTTPS server
@@ -51,4 +53,4 @@ server {
 }
 ```
 大功告成(>▽<)，现在访问[alwen.me](https://alwen.me)浏览器就显示出安全标志了.
-必须感谢Github提供的[学生礼包](https://education.github.com/pack)啊，还有100美刀的DigitalOcean消费劵,用来作梯子再好不过啦～不过现在好像国内的.edu邮箱被屏蔽，申请不了了 >﹏<
+必须感谢Github提供的 [学生礼包](https://education.github.com/pack) 啊，还有100美刀的DigitalOcean消费劵,用来作梯子再好不过啦～不过现在好像国内的.edu邮箱被屏蔽，申请不了了 >﹏<

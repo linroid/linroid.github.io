@@ -1,6 +1,9 @@
 title: 利用Github的Webhook部署博客
 date: 2015-01-21 00:01:28
-tags: Github
+tags: 
+ - Github
+ - Blog
+categories: 瞎折腾
 ---
 Github现在比较难打开了，决定把博客放到自己的vps上。
 为了能在Github上产生点动态,不想让hexo直接push到vps上~.~如果每次都要手动到vps上执行pull，那太麻烦了！！！

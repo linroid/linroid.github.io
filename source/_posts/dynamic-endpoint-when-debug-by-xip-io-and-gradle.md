@@ -1,10 +1,13 @@
 title: xip.io + gradle 在调试时动态设置服务端地址
 date: 2015-07-24 19:25:55
-tags: 瞎折腾
+tags: 
+ - gradle
+ - Android Studio
+categories: 瞎折腾
 ---
 
 > 日常开发中，如果服务端在本地，通常可通过改hosts、写死IP、动态域名等方式来设置服务端地址，但总觉很麻烦，不灵活；比如更换网络导致IP变化，就得重新设置。
-> 今天突发奇想，利用xip.io + gradle来自动设置服务端地址
+> 今天突然想到，利用xip.io 和 gradle来自动设置服务端地址
 
  [xip.io](http://xip.io) 是一个直接使用域名来指定IP的域名服务，无需手动设置DNS，同时也不需要任何注册。这解决了使用IP无法使用多个Virtual Host而使用域名又得很麻烦改地DNS的问题。
  

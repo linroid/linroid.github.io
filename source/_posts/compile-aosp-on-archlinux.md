@@ -1,6 +1,9 @@
 title: Archlinux 下编译AOSP小记
 date: 2015-01-27 09:51:28
-tags: Archlinux
+tags: 
+ - linux
+ - AOSP
+categories: 瞎折腾
 ---
 
 我用的是fish shell，首先要进入到bash shell:

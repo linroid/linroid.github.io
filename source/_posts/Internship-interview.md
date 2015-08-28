@@ -1,7 +1,7 @@
 title: 找实习的那点事
 date: 2015-05-22 17:15:27
 tags: 实习
-
+categories: 整理总结
 ---
 
 ![阿里包包~](http://7u2rtn.com1.z0.glb.clouddn.com/IMG20150507154554.jpg)

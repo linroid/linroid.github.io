@@ -3,6 +3,7 @@ layout: post
 title: "新家"
 date: 2013-10-02 07:58
 comments: true
+tags: Blog
 categories: 随笔
 ---
 这个Blog是放在[Github Pages](http://pages.github.com/)的。  

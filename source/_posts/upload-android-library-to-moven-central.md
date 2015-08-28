@@ -3,7 +3,7 @@ title: 提交library项目到 Maven Central
 date: 2015-03-13 10:51:42
 tags:
 	- gradle
-	- android
+categories: 瞎折腾
 ---
   将[FilterMenu](http://github.com/linroid/FilterMenu)提交到GitHub后，在README.md的Getting Started里仅仅写上
 

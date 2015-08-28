@@ -1,10 +1,11 @@
 title: "调用FragmentPagerAdapter的notifyDataSetChanged()方法视图未更新"
 date: 2015-01-29 21:54:39
-tags: Android
+tags: Fragment
+categories: 遇过的坑
 ---
 
 学校在考完试后给我们加了一周的Android课，本来考完试很累了，还一天不让休息，天天起早去上课π__π。最后交课程设计, 模仿彩虹天气写一个天气应用,下面是我们组做的:
-![Alt text](http://7u2rtn.com1.z0.glb.clouddn.com/media/view-not-updated-after-call-FragmentPagerAdapter-notifyDataSetChanged/device-2015-01-26-105356.png)
+<img  src="http://7u2rtn.com1.z0.glb.clouddn.com/media/view-not-updated-after-call-FragmentPagerAdapter-notifyDataSetChanged/device-2015-01-26-105356.png" width="300px" />
 <!--more-->
 城市切换使用的ViewPager，以下是FragmentPagerAdapte里的一个方法，当Loader加载了新的Cursor后调用该方法。
 ```java

@@ -3,7 +3,8 @@ layout: post
 title: "自定义AndroidStudio Locat的输出颜色"
 date: 2014-03-04 11:32
 comments: true
-categories: Android
+tags: Android Studio
+categories: 瞎折腾
 ---
 AndroidStudio 默认的日志输出颜色只有灰色和红色两种，不易区分不同级别的日志。  
 ###自定义日志输出颜色：  

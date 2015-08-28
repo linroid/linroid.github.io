@@ -4,11 +4,12 @@
 
 # Site
 title: linroid
-subtitle: 为开发小而美的应用奋斗!
-description: I'm linroid,I love coding.
+subtitle: 为小而美的应用奋斗!
+description: 为小而美的应用奋斗!
 author: linroid
 email: linroid@gmail.com
-language: en_US
+language: zh-Hans
+avatar: http://tp4.sinaimg.cn/2053755511/180/5719286598/1
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -48,7 +49,7 @@ tag_map:
 ## 2: Enable pagination
 ## 1: Disable pagination
 ## 0: Fully Disable
-archive: 1
+archive: 0
 category: 2
 tag: 2
 
@@ -76,10 +77,25 @@ pagination_dir: page
 # Disqus
 disqus_shortname: linroid
 
+#百度统计
+baidu_analytics: d63fb0c8f56fdf395f9b532086853a3b
+
+# Social Links
+social:
+  GitHub: https://github.com/linroid
+  Weibo: http://weibo.com/ekstone
+  Google+: "https://plus.google.com/114352094187316162338/posts"
+
+# title, chinese available
+links_title: 友链
+# links
+# links:
+#   2bab: http://2bab.com/
+
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: yilia
+theme: next
 exclude_generator:
 #npm install hexo-generator-sitemap
 #npm install hexo-generator-feed --save
