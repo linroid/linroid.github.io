@@ -84,7 +84,8 @@ baidu_analytics: d63fb0c8f56fdf395f9b532086853a3b
 social:
   GitHub: https://github.com/linroid
   Weibo: http://weibo.com/ekstone
-  Google+: "https://plus.google.com/114352094187316162338/posts"
+  Google+: https://plus.google.com/114352094187316162338/posts
+  Instagram: https://instagram.com/linroid/
 
 # title, chinese available
 links_title: 友链
@@ -95,7 +96,7 @@ links_title: 友链
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: next
+theme: apollo
 exclude_generator:
 #npm install hexo-generator-sitemap
 #npm install hexo-generator-feed --save
@@ -105,9 +106,15 @@ feed:
   limit: 20
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
+# deploy:
+#     type: git
+#     repo: https://github.com/linroid/linroid.github.io.git
+#     type: git
+#     repo: https://gitcafe.com/linroid/linroid.git
+#     branch: gitcafe-pages
 deploy:
-    type: git
-    repo: https://github.com/linroid/linroid.github.io.git
-    type: git
-    repo: https://gitcafe.com/linroid/linroid.git
-    branch: gitcafe-pages
+  type: git
+  message: '发布成功'
+  repo: 
+    github: https://github.com/linroid/linroid.github.io.git,master
+    gitcafe: https://gitcafe.com/linroid/linroid.git,gitcafe-pages

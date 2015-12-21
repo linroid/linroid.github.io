@@ -1,0 +1,6 @@
+title: 我的简历
+date: 2015-09-01 02:24:00
+---
+
+{% iframe /resume/content.html 100% 1900 %}
+
