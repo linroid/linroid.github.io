@@ -7,6 +7,7 @@ tags: Android Studio
 categories: 瞎折腾
 ---
 AndroidStudio 默认的日志输出颜色只有灰色和红色两种，不易区分不同级别的日志。  
+<!--more-->
 ###自定义日志输出颜色：  
 * 打开`setting`>`editor`>`Color & Fontd`>`Android Logcat`.
 * 点击不同的日志级别然后设置相应颜色即可，自定义颜色之前要取消勾选Inherit Attributes From...  

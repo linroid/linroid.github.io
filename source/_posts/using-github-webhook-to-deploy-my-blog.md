@@ -8,6 +8,7 @@ categories: 瞎折腾
 Github现在比较难打开了，决定把博客放到自己的vps上。
 为了能在Github上产生点动态,不想让hexo直接push到vps上~.~如果每次都要手动到vps上执行pull，那太麻烦了！！！
 Github的仓库可以设置`Webhook`，当收到push后会通知到设定的url，救星来啦～～～
+<!--more-->
 看了下api文档，用php写了`git-hook.php`文件放到博客目录下:
 ```php
 <?php

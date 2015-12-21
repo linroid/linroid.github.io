@@ -14,3 +14,4 @@ categories: 瞎折腾
 	`sudo ln -sf /usr/bin/python2.7  /usr/bin/python`
 安装依赖库
 	`yaourt -S libtinfo`
+<!--more-->

@@ -6,7 +6,9 @@ tags:
 categories: 遇过的坑
 ---
 ![image](http://7u2rtn.com1.z0.glb.clouddn.com/Snip20150718_8.png)
-看到[drakeet](https://github.com/drakeet)的[妹纸](https://github.com/drakeet/Meizhi)App，想写个iOS版拿来练手。开始时项目命名为`MeiZhi`，然后发现drakeet的是`Meizhi`，所以我也改为`Meizhi`来保持一致。在GitHub上查看时发现名称并没有改变，原因是git默认忽略了大小写。设置git大小写敏感:
+看到[drakeet](https://github.com/drakeet)的[妹纸](https://github.com/drakeet/Meizhi)App，想写个iOS版拿来练手。开始时项目命名为`MeiZhi`，然后发现drakeet的是`Meizhi`，所以我也改为`Meizhi`来保持一致。在GitHub上查看时发现名称并没有改变，原因是git默认忽略了大小写。
+<!--more-->
+设置git大小写敏感:
 
 `git config core.ignorecase false`
 

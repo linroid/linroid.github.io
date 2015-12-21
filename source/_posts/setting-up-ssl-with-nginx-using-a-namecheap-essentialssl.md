@@ -6,6 +6,7 @@ categories: 瞎折腾
 ---
 ![使用NameCheap的SSL证书](/media/setting-up-ssl-with-nginx-using-a-namecheap-essentialssl/20141221121928.png)
 利用之前申请了Github的学生礼包免费注册了[alwen.me]域名，另外一年免费的ssl证书也申请了.
+<!--more-->
 在服务器上生成用于申请证书的CSR和私钥
 `openssl req -new -nodes -keyout alwen_me.key -out alwen_me.csr`
 将csr交到NameCheap，数小时后webmaster@alwen.me收到了来自Comodo的域名控制权验证邮件，完成验证后，管理员邮箱就会收到PositiveSSL证书了
