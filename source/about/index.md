@@ -7,8 +7,6 @@ date: 2014-12-20 02:24:00
  - 开源爱好者，希望有一天自己也能为开源社区作出贡献
  - 之前玩php(嗯，世界上最好的语言！)，后来跳入Android的坑里。对于 [Jake Wharthon](http://jakewharton.com/)、 [Chris Banes](https://chris.banes.me/) 、[Romain Guy](http://www.curious-creature.com/about/) 、[碎星](http://imid.me/)、 [代码家](http://www.daimajia.com/) 这些大牛，跪舔( ˘･з･)
  - 喜欢Google的各种产品(虽然在天朝〒△〒),Google+里面各种大牛！Driver处理文档好爽！！图片放到Photos会收到很多惊喜！Books的翻页效果好赞！Play最好的Android应用商店！Keeps记一些琐事很方便！新出的Inbox美哭>_<
- - 查看我的 [在线简历](/resume/)
- 
 ## Timeline
  - `2012.09` 进入湘潭大学就读，软件工程专业
  - `2013.01` 玩起微信公众号，在校园里小火一把
@@ -19,7 +17,7 @@ date: 2014-12-20 02:24:00
  - `2015.03` [FilterMenu](https://github.com/linroid/FilterMenu) 在GitHub上获得更多的star。
  - `2015.06` 来到阿里实习(iOS开发)，从0开始接触iOS开发。实习两个多月，后面被拥抱变化。
  - `2015.10` 来到知乎实习(Android开发)
- 
+
 ## Contact
  - GitHub : [linroid](http://github.com/linroid)
  - Email : [linroid@gmail.com](mailto:linroid@gmail.com)
