@@ -14,6 +14,6 @@ AndroidStudio 默认的日志输出颜色只有灰色和红色两种，不易区
 
 **如下图：**  
 ![截图01](/media/2014-03-04-make-logcat-of-android-stidio-colorful/screenshot_01.png)  
-**我这里使用的颜色是[Android Design](http://developer.android.com/design/style/color.html) 中的颜色模板.  
-设置成功后，Logcat的输出就变成彩色的了:**
+**我这里使用的颜色是 [Android Design](http://developer.android.com/design/style/color.html) 中的颜色模板.  
+设置成功后，Logcat 的输出就变成彩色的了:**
 ![截图02](/media/2014-03-04-make-logcat-of-android-stidio-colorful/screenshot_02.png)

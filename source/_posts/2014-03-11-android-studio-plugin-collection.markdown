@@ -9,7 +9,7 @@ tags:
 categories: 收藏
 ---
 
-以下是一些Android Studio插件的介绍,虽然Android Studio的插件没有Eclipse插件那样丰富，不过利用它们，依然可以为开发工作带来许多方便   
+以下是一些 Android Studio 插件的介绍,虽然 Android Studio 的插件没有 Eclipse 插件那样丰富，不过利用它们，依然可以为开发工作带来许多方便   
 <!--more-->
 
 ### ButterKnife

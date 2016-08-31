@@ -44,7 +44,7 @@ public void setChecked(boolean checked) {
     }
  ```
 
- 可以看到SwitchCompat多了一个`isShown()`的判定条件
+ 可以看到 SwitchCompat 多了一个 `isShown()` 的判定条件
 
  ```java
      /**
@@ -73,13 +73,13 @@ public void setChecked(boolean checked) {
     }
 ```
 
-`isShown()`会向上递归，如果parent为null就返回false。
-而Preference中，如果点击了，就会调用`notifyDataSetChanged()`刷新整个RecyclerView，SwitchCompat的`setChecked()`是在`onBindViewHolder`时调用的，这个时候还没有添加到parent中，所以isShown()就会return false，从而动画不执行。
+`isShown()` 会向上递归，如果 parent 为 null 就返回 false。
+而 Preference 中，如果点击了，就会调用 `notifyDataSetChanged()` 刷新整个 RecyclerView，SwitchCompat 的 `setChecked()` 是在 `onBindViewHolder` 时调用的，这个时候还没有添加到 parent 中，所以 `isShown()` 就会 return false，从而动画不执行。
 
 ## 解决方法
-  因为Preference的特殊性，所有状态改变都通过`notifyDataSetChanged()`来生效，所以这里通过以下hack的方式来解决，其他地方使用到`SwitchCompat`立即setChecked()就不会出现这个问题
+  因为 Preference 的特殊性，所有状态改变都通过 `notifyDataSetChanged()` 来生效，所以这里通过以下 hack 的方式来解决，其他地方使用到 `SwitchCompat`立即 setChecked() 就不会出现这个问题
 
-  创建`SwitchCompatFixed`继承SwitchCompat 重写`isShown()`方法
+  创建 `SwitchCompatFixed`继承 SwitchCompat 重写`isShown()`方法
   ```java
   	@Override
 	public boolean isShown() {
@@ -93,7 +93,7 @@ public void setChecked(boolean checked) {
 		return super.isShown();
 	}
   ```
-   主题中修改SwitchPreferenceCompat的样式
+   主题中修改 SwitchPreferenceCompat 的样式
    ```xml
    <item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompatFixed</item>
    ```

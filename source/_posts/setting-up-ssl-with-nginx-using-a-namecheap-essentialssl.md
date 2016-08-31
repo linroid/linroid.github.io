@@ -5,11 +5,11 @@ tags:
 categories: 瞎折腾
 ---
 ![使用NameCheap的SSL证书](/media/setting-up-ssl-with-nginx-using-a-namecheap-essentialssl/20141221121928.png)
-利用之前申请了Github的学生礼包免费注册了[alwen.me]域名，另外一年免费的ssl证书也申请了.
+利用之前申请了 GitHub 的学生礼包免费注册了 [alwen.me] 域名，另外一年免费的 ssl 证书也申请了.
 <!--more-->
-在服务器上生成用于申请证书的CSR和私钥
+在服务器上生成用于申请证书的 CSR 和私钥
 `openssl req -new -nodes -keyout alwen_me.key -out alwen_me.csr`
-将csr交到NameCheap，数小时后webmaster@alwen.me收到了来自Comodo的域名控制权验证邮件，完成验证后，管理员邮箱就会收到PositiveSSL证书了
+将 csr 交到 NameCheap，数小时后 webmaster@alwen.me 收到了来自 Comodo 的域名控制权验证邮件，完成验证后，管理员邮箱就会收到 PositiveSSL 证书了
 附件中一共包含四个文件：
 - Root CA Certificate - AddTrustExternalCARoot.crt
 - Intermediate CA Certificate - COMODORSAAddTrustCA.crt
@@ -20,7 +20,7 @@ categories: 瞎折腾
 ```
  cat alwen_me.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > ssl_bundle.cer
 ```
-接下来就是设置nginx配置文件开启ssl了:
+接下来就是设置 nginx 配置文件开启 ssl 了:
 ```conf
 # HTTPS server
 server {
@@ -45,7 +45,7 @@ server {
 	}
 }
 ```
-并且将http访问跳转至https连接：
+并且将 http 访问跳转至 https 连接：
 ```
 server {
   listen 80;
@@ -53,5 +53,5 @@ server {
   return 301 https://alwen.me$request_uri;
 }
 ```
-大功告成(>▽<)，现在访问[alwen.me](https://alwen.me)浏览器就显示出安全标志了.
-必须感谢Github提供的 [学生礼包](https://education.github.com/pack) 啊，还有100美刀的DigitalOcean消费劵,用来作梯子再好不过啦～不过现在好像国内的.edu邮箱被屏蔽，申请不了了 >﹏<
+大功告成(>▽<)，现在访问 [alwen.me](https://alwen.me) 浏览器就显示出安全标志了.
+必须感谢 GitHub 提供的 [学生礼包](https://education.github.com/pack) 啊，还有100美刀的 DigitalOcean 消费劵用来作梯子再好不过啦～不过现在好像国内的 .edu 邮箱被屏蔽，申请不了了 >﹏<

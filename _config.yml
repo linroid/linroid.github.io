@@ -117,4 +117,4 @@ deploy:
   message: '发布成功'
   repo: 
     github: https://github.com/linroid/linroid.github.io.git,master
-    gitcafe: https://gitcafe.com/linroid/linroid.git,gitcafe-pages
+    coding: https://git.coding.net/linroid/linroid.git,gitcafe-pages
