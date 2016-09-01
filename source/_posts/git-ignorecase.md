@@ -1,4 +1,4 @@
-title: Git在OSX中的提交忽略文件名称大小写
+title: Git 在 OSX 中的提交忽略文件名称大小写
 date: 2015-07-18 23:21:20
 tags: 
   - git

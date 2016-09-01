@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google发布的官方刷新组件:SwipeRefreshLayout"
+title: "Google 发布的官方刷新组件：SwipeRefreshLayout"
 date: 2014-04-08 18:12
 comments: true
 tags: 

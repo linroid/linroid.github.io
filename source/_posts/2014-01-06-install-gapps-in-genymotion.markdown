@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "给Genymotion 安装 Gapps"
+title: "给 Genymotion 安装 Gapps"
 date: 2014-01-06 21:24
 comments: true
 tags: Genymotion

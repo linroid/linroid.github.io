@@ -1,4 +1,4 @@
-title: 使用NameCheap的SSL证书
+title: 使用 NameCheap 的 SSL 证书
 date: 2014-12-21 01:14:35
 tags:
 	- Blog

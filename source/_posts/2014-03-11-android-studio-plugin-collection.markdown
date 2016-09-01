@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android Studio一些插件的介绍"
+title: "Android Studio 一些插件的介绍"
 date: 2014-03-11 23:22
 comments: true
 tags:

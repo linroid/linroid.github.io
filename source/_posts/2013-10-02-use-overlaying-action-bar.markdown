@@ -6,14 +6,14 @@ comments: true
 tags: Android
 categories: 学习笔记
 ---
-默认情况下，`Action Bar`出现在窗口顶部。有时为了让屏幕显示更多的内容，需要隐藏`Action Bar`（如向下滑动列表时隐藏，向上滑动列表时显示）。  
+默认情况下，`Action Bar` 出现在窗口顶部。有时为了让屏幕显示更多的内容，需要隐藏 `Action Bar`（如向下滑动列表时隐藏，向上滑动列表时显示）。  
 
-如果直接调用`Action Bar`的`hide()`、收`show()`方法，会让`activity`根据新的区域大小重新计算并重新绘制布局。  
+如果直接调用 `Action Bar`的`hide()`、收 `show()` 方法，会让`activity`根据新的区域大小重新计算并重新绘制布局。  
 
-为了避免这种情况，可以使用`Overlaying Action Bar`，即整个屏幕都显示内容，而`Action Bar`覆盖这上面，这样隐藏/显示Action Bar的时候就不会重新计算布局大小并重新绘制布局。  
+为了避免这种情况，可以使用 `Overlaying Action Bar`，即整个屏幕都显示内容，而 `Action Bar` 覆盖这上面，这样隐藏/显示Action Bar的时候就不会重新计算布局大小并重新绘制布局。  
 <!--more-->
  
-开启Action Bar的Overlaying模式需要在主题中设置`android:windowActionBarOverlaying`属性为`true`,为了兼容2.1-3.1版本，设置`windowActionBarOverLaying`属性为`true`  
+开启Action Bar的Overlaying模式需要在主题中设置 `android:windowActionBarOverlaying` 属性为`true`,为了兼容2.1-3.1版本，设置`windowActionBarOverLaying` 属性为 `true`  
 ```xml
 <item name="android:windowActionBarOverlay">true</item>
  

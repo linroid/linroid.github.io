@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "自定义AndroidStudio Locat的输出颜色"
+title: "自定义 Android Studio Locat 的输出颜色"
 date: 2014-03-04 11:32
 comments: true
 tags: Android Studio

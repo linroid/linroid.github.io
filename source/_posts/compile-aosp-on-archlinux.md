@@ -1,4 +1,4 @@
-title: Archlinux 下编译AOSP小记
+title: Archlinux 下编译 AOSP 小记
 date: 2015-01-27 09:51:28
 tags: 
  - linux
@@ -6,7 +6,7 @@ tags:
 categories: 瞎折腾
 ---
 
-我用的是fish shell，首先要进入到bash shell:
+我用的是 fish shell，首先要进入到 bash shell:
 	`bash`
 切换jdk版本到1.7
 	`sudo archlinux-java set java-7-openjdk`
