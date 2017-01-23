@@ -13,7 +13,7 @@ tags:
 // ...
 private HandlerThread mDaemonHandler;
 
-Runnable ` = new Runnable() {
+Runnable mTimerRunnable = new Runnable() {
 	@Override
 	public void run() {
 	    longTimeOperation();
@@ -41,8 +41,15 @@ public void onDestory() {
 ```
 　　这样就保证了移除 `mTimerRunnable` 的操作和 `mDaemonHandler` 在同一线程中，不会和 `mTimerRunnable` 『并发执行』。写成更通用的：
 ```java
-public static class SafetyUtils {
-    public void removeCallback(final Handler handler, final Runnable callback) {
+import android.os.Handler;
+import android.os.Looper;
+
+/**
+ * @author linroid <linroid@gmail.com>
+ * @since 25/11/2016
+ */
+public class SafetyUtils {
+    public static void removeCallbacks(final Handler handler, final Runnable callback) {
         if (handler.getLooper() == Looper.myLooper()) {
             handler.removeCallbacks(callback);
         } else {
@@ -54,6 +61,22 @@ public static class SafetyUtils {
             });
         }
     }
+
+    public static void removeMessages(final Handler handler, final int what) {
+        removeMessages(handler, what, null);
+    }
+
+    public static void removeMessages(final Handler handler, final int what, final Object obj) {
+        if (handler.getLooper() == Looper.myLooper()) {
+            handler.removeMessages(what, obj);
+        } else {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    handler.removeMessages(what, obj);
+                }
+            });
+        }
+    }
 }
 ```
-　　
