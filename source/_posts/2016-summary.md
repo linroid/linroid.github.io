@@ -21,8 +21,10 @@ tags: 总结
 去过海边，坐过游轮，到过草原，玩过过山车，这次回家还能坐下飞机；经历过在北京的冬天里吃西瓜，广州的冬天里穿短袖=。=  
 [Instagram](https://www.instagram.com/linroid/)
 
+![1111](file:///Users/linroid/Downloads/WechatIMG5.png)
+
 尝试自己做饭吃，虽然做得不好，但能让自己吃饱:)
 
----
+--- 
 
 2017 年，希望自己能赚更多的钱：）
