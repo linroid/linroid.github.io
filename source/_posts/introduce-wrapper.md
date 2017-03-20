@@ -46,7 +46,7 @@ Android 开发中，会有很多情况下用到观察者模式，如果你自定
 
 # 造轮子
 
- 为了解决上面的痛苦，我觉得撸一个轮子，起名叫「Wrapper」，它利用 AnnotationProcessor 在构建过程中自动生成指定 Listener 的 Wrapper 类，在需要时只需简简单单的调用一下方法即可：
+ 基于上面的原因，于是我撸一个轮子，就叫「Wrapper」。它利用 AnnotationProcessor 在构建过程中自动生成指定 Listener 的 Wrapper 类，在需要时只需简简单单的调用一下方法即可：
  
  ```java
  listener.foo();
