@@ -9,14 +9,14 @@ date: 2014-12-20 02:24:00
  - 喜欢新技术，但也不会盲目的追寻
  - 对于能提升效率的工具会爱不释手，有时也会自己动手写一个
  - 有点强迫症，比如双斜杠注释后面要有空格、xml 的布局文件会对属性进行排序、中英文之间要有空格...
- - 希望能为开源社区做点自己的贡献
+ - 努力为开源社区做点自己的贡献
 
 <!-- - 开源爱好者，希望有一天自己也能为开源社区作出贡献 -->
 <!--  - 之前玩 PHP (嗯，世界上最好的语言！)，后来跳入 Android 的坑里。对于 [Jake Wharthon](http://jakewharton.com/)、 [Chris Banes](https://chris.banes.me/) 、[Romain Guy](http://www.curious-creature.com/about/) 、[碎星](http://imid.me/) 这些大牛，跪舔( ˘･з･)
  - 喜欢 Google 的各种产品(虽然在天朝〒△〒),Google+ 里面各种大牛！Drive 处理文档好爽！！图片放到 Photos 会收到很多惊喜！Books 的翻页效果好赞！Play 最好的 Android 应用商店！Keeps 记一些琐事很方便！新出的 Inbox 美哭>_< -->
  
 ## Timeline
- - `2016.11` 加入欢聚时代(YY) (Android 开发)，做海外直播产品 [Bigo Live](http://www.bigo.sg/)
+ - `2016.10` 加入欢聚时代(YY) (Android 开发)，做海外直播产品 [Bigo Live](http://www.bigo.sg/)
  <!-- - `2016.07` 不想异地，便离开了知乎，来到广州一家初创公司(Android 开发) -->
  - `2016.06` 毕业了，结束了学生时代
  - `2016.06` 和我的 "world" 在一起❤️
