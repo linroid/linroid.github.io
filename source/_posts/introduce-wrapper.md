@@ -139,8 +139,8 @@ public class SomeListenerMultiWrapper implements SomeListener {
 在你的 `build.gradle`：
 	```groovy
 	dependencies {
-	    annotationProcessor 'com.linroid.wrapper:compiler:0.0.1'
-	    compile 'com.linroid.wrapper:library:0.0.1'
+	    annotationProcessor 'com.linroid.wrapper:compiler:0.1.0'
+	    compile 'com.linroid.wrapper:library:0.1.0'
 	}
 	```
 
@@ -216,4 +216,5 @@ multiWrapper.onFoo(view); // 调用方法
 ```
 
 # 最后
-如果你有什么好的建议可以在评论留言，也可以提 PR :)
+如果你有什么好的建议可以在评论留言，也可以提 [PR](https://github.com/linroid/Wrapper/pulls) :)
+(嗯，我知道 kotlin 大法🐒

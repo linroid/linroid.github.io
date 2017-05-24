@@ -5,7 +5,7 @@ date: 2014-12-20 02:24:00
 一款支持扫描所有应用图片的 APP，方便用户查看图片，并对图片进行保存、分享、删除等操作。
 使用 [Kotlin](https://kotlinlang.org/) 语言开发：）
 
-下载：[Play](https://play.google.com/store/apps/details?id=com.linroid.viewit) | [APK](https://fir.im/viewIt)
+下载：[酷安](http://www.coolapk.com/apk/com.linroid.viewit) | [Play](https://play.google.com/store/apps/details?id=com.linroid.viewit) | [APK](https://fir.im/viewIt)
 
 ## Wrapper
 通过注解自动生成一些繁琐无趣的代码，让开发者可以更轻松地使用观察者模式。
