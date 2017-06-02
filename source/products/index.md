@@ -1,11 +1,18 @@
 title: Products
 date: 2014-12-20 02:24:00
 ---
+## 体测成绩查询
+一个微校应用，可以查询全国各地高校学生的体测成绩。
+
+查看：[微校应用](http://weixiao.qq.com/home/app/details/10978)
+
 ## 看应用
 一款支持扫描所有应用图片的 APP，方便用户查看图片，并对图片进行保存、分享、删除等操作。
 使用 [Kotlin](https://kotlinlang.org/) 语言开发：）
 
 下载：[酷安](http://www.coolapk.com/apk/com.linroid.viewit) | [Play](https://play.google.com/store/apps/details?id=com.linroid.viewit) | [APK](https://fir.im/viewIt)
+
+源码：[GitHub](https://github.com/linroid/ViewIt)
 
 ## Wrapper
 通过注解自动生成一些繁琐无趣的代码，让开发者可以更轻松地使用观察者模式。
