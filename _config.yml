@@ -114,8 +114,8 @@ feed:
 #     branch: gitcafe-pages
 deploy:
   type: git
-  message: '发布成功'
+  message: 'deploy'
   repo: 
     github: https://github.com/linroid/linroid.github.io.git,master
     #coding: https://git.coding.net/linroid/linroid.git,gitcafe-pages
-    vultr: root@linroid.com:/root/repo/linroid.com.git,master
+    # vultr: root@linroid.com:/root/repo/linroid.com.git,master
