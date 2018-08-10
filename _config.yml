@@ -117,4 +117,5 @@ deploy:
   message: '发布成功'
   repo: 
     github: https://github.com/linroid/linroid.github.io.git,master
-    coding: https://git.coding.net/linroid/linroid.git,gitcafe-pages
+    #coding: https://git.coding.net/linroid/linroid.git,gitcafe-pages
+    vultr: root@linroid.com:/root/repo/linroid.com.git,master

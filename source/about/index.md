@@ -14,8 +14,23 @@ date: 2014-12-20 02:24:00
 <!-- - 开源爱好者，希望有一天自己也能为开源社区作出贡献 -->
 <!--  - 之前玩 PHP (嗯，世界上最好的语言！)，后来跳入 Android 的坑里。对于 [Jake Wharthon](http://jakewharton.com/)、 [Chris Banes](https://chris.banes.me/) 、[Romain Guy](http://www.curious-creature.com/about/) 、[碎星](http://imid.me/) 这些大牛，跪舔( ˘･з･)
  - 喜欢 Google 的各种产品(虽然在天朝〒△〒),Google+ 里面各种大牛！Drive 处理文档好爽！！图片放到 Photos 会收到很多惊喜！Books 的翻页效果好赞！Play 最好的 Android 应用商店！Keeps 记一些琐事很方便！新出的 Inbox 美哭>_< -->
- 
+
+## Language
+目前我正在使用以下语言：
+ - `Python`：我目前正在学的语言，不会 Python 都不好意思说自己是程序员
+ - `Java`：作为 Android 开发肯定得用这个：）
+ - `Kotlin`：自己写 APP 完全使用 Kotlin 了，公司项目也用上它啦~
+ - `Grovvy`：写 Gradle 插件是的时候使用它，以后可能切换成 Kotlin
+ - `C / C++`：偶尔会用 C / C++ 写 Native 模块
+ - `PHP`：这是我的编程入门语言（已用6年之久），最喜欢的是 Laravel 框架，以后可能切换成 Python 来写后台
+ - `JavaScript`：业余项目的前端用它来写，很喜欢 Vue 框架
+
+以下语言我曾经学过，现在已放弃：
+ - `Objective-C`：之前在阿里实习的几个月里用它来写 iOS，现在自然用不着了（还是很想吐槽它）
+ - `Go`: 曾经想换一门语言来写后台，但发现还是强大的PHP更适合个人项目，就没有继续了
+
 ## Timeline
+ - `2017.06` 很幸运地加入了腾讯^_^
  - `2016.10` 加入欢聚时代(YY) (Android 开发)，做海外直播产品 [Bigo Live](http://www.bigo.sg/)
  <!-- - `2016.07` 不想异地，便离开了知乎，来到广州一家初创公司(Android 开发) -->
  - `2016.06` 毕业了，结束了学生时代
@@ -36,6 +51,8 @@ date: 2014-12-20 02:24:00
  - Email: [linroid@gmail.com](mailto:linroid@gmail.com)
  - Google+: [+张林(linroid)](https://plus.google.com/114352094187316162338/posts)
  - 新浪微博: [@你是个好人啦](http://weibo.com/ekstone)
+
+ 如果需要腾讯的内推可以发邮件到 `grootzhang@tencent.com`
  
 ## Links
 

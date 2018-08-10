@@ -1,6 +1,5 @@
 ---
 layout: post
-title: photos
 date: 2014-09-17 03:31:26
 slug: "photos"
 title: "Photos"
