@@ -5,7 +5,7 @@ categories: 遇过的坑
 ---
 
 学校在考完试后给我们加了一周的 Android 课，本来考完试很累了，还一天不让休息，天天起早去上课π__π。最后交课程设计, 模仿彩虹天气写一个天气应用,下面是我们组做的:
-<img  src="http://7u2rtn.com1.z0.glb.clouddn.com/media/view-not-updated-after-call-FragmentPagerAdapter-notifyDataSetChanged/device-2015-01-26-105356.png" width="300px" />
+<img  src="https://cdn.linroid.com/media/view-not-updated-after-call-FragmentPagerAdapter-notifyDataSetChanged/device-2015-01-26-105356.png" width="300px" />
 <!--more-->
 城市切换使用的 ViewPager，以下是 FragmentPagerAdapter 里的一个方法，当 Loader 加载了新的 Cursor 后调用该方法。
 ```java

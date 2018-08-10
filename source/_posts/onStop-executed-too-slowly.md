@@ -41,7 +41,7 @@ protected void onPause() {
 
 发现有个动画组件的消息不停地被执行，移除这个动画组件后，问题依然存在，并且未发现其他比较明显的异常消息。
 
-![](http://cdn.linroid.com/WX20180723-105051@2x.png)
+![](https://cdn.linroid.com/WX20180723-105051@2x.png)
 
 既然主线程中一直非空闲状态，那么我们就把主线程消息队列中的所有消息打印出来看看？
 
@@ -91,10 +91,10 @@ private void printMessages() {
 }
 ```
 得到如下日志：
-![](http://cdn.linroid.com/blog/WX20180723-105818@2x.png)
+![](https://cdn.linroid.com/blog/WX20180723-105818@2x.png)
 可以看到消息队列的头部始终是一个 SyncBarrier 消息，有这个消息存在的时候，MessageQueue 只会取下一个 异步消息，让系统的 UI 事件消息得到优先处理。由此猜测，有地方不停地向 MessageQueue 中添加 SyncBarrier，通过对 `MessageQueue#postSyncBarrier()  `方法打调试断点后，终于发现了罪魁祸首。
 
-![](http://cdn.linroid.com/blog/WX20180723-193912@2x.png)
+![](https://cdn.linroid.com/blog/WX20180723-193912@2x.png)
 
 查看代码后发现，虽然这位童鞋在收到 onGlobalLayout() 回调时的确调用了`View.getViewTreeObserver().removeOnGlobalLayoutListener()` ，但在上面截图中的 `fixBtnLayout`方法中又把监听器重新添加上了，所以实际并没有成功移除，相当于这里出现一个“异步的死循环“。
 

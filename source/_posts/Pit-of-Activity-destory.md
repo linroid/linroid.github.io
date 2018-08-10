@@ -6,11 +6,11 @@ date: 2017-05-24 16:32:00
 ---
 
 先看一张按下 Back 键之后，Activity 生命周期回调的日志截图：
-![ActivityBackPressed](http://7u2rtn.com1.z0.glb.clouddn.com/activity_back_pressed.png)
+![ActivityBackPressed](https://cdn.linroid.com/activity_back_pressed.png)
 从日志中可以看到当按下 Back 键时，当前的 Activity 会马上回调 onPause() 方法，而 onStop() 是在 MainActivity 的 onResume()之后才调用，onPause() 与 onStop()之间相隔了大约 300ms，也就是说 Activity 不是马上被销毁的。
 
 再看另一个快速重新打开 `LifeActivity` 的 Case：
-![QuickReopenActivity](http://7u2rtn.com1.z0.glb.clouddn.com/quick_reopen_actiivty.png)
+![QuickReopenActivity](https://cdn.linroid.com/quick_reopen_actiivty.png)
 > 这里我采用代码模拟快速重新打开 `LifeActivity`，finish() 后延迟 300ms 再启动 `LifeActivity`。因为我们的 Activity 里没做什么事，所以很难手动重现快速重新打开 Activity 的异常 Case，而实际项目因为逻辑复杂，往往在1~2s或者更长的时间里很容易复现这种情况。
 
 出现了诡异的事：LifeActivity[33732136] 是旧的 Activity，但它却在新的 LifeActivity[212157058] 显示之后才被销毁的，看到这个可能你已经心头一凉。这会导致什么问题呢？这会让我们依赖 Activity 生命周期回调来做资源回收的代码变得不可靠。
