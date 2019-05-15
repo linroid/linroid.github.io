@@ -1,8 +1,12 @@
 title: Products
 date: 2014-12-20 02:24:00
 ---
+## Z直播
+一个聚合了国内十多个直播平台的直播 APP，月活 20 万(2019.05)
+下载: [Android](http://app.zhibo.at)
+
 ## 体测成绩查询
-一个微校应用，可以查询全国各地高校学生的体测成绩。
+一个微校应用，可以查询全国各地高校学生的体测成绩，累计百万用户使用。
 
 查看：[微校应用](http://weixiao.qq.com/home/app/details/10978)
 
@@ -34,19 +38,8 @@ date: 2014-12-20 02:24:00
 
 源码：[Web](https://github.com/linroid/Sky31Radio-Server) | [Android](https://github.com/linroid/Sky31Radio)
 Link：[Web](http://radio.sky31.com/) | [APK](http://fir.im/Sky31Radio)
-  
-## laravel-wechat
-一个适用于 Laravel 的微信开发框架(PHP)。
-
-源码：[GitHub](http://github.com/linroid/FilterMenu)
 
 ## FilterMenu
 一个自定义圆形菜单组件，拥有较为优美的动画，灵感来自 Dribbble 一位设计师的概念图。
 
 源码：[GitHub](http://github.com/linroid/FilterMenu)
-
-## 画眉小栈
-一个提供动态、问答、活动、社团、以及一些查询工具的校园社交平台。因功能太多导致无法继续维护，由此决定做小而美的应用：）
-
-## 微信公众号
-长期技术维护公众号：`XTU百事通`(微信号：xtuors)，拥有 5w+ 粉丝。

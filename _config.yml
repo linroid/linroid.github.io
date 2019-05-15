@@ -116,6 +116,6 @@ deploy:
   type: git
   message: 'deploy'
   repo: 
-    github: https://github.com/linroid/linroid.github.io.git,master
+    github: git@github.com:linroid/linroid.github.io.git,master
     #coding: https://git.coding.net/linroid/linroid.git,gitcafe-pages
     # vultr: root@linroid.com:/root/repo/linroid.com.git,master
