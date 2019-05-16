@@ -1,0 +1,3 @@
+[submodule "themes/apollo"]
+	path = themes/apollo
+	url = https://github.com/pinggod/hexo-theme-apollo.git
