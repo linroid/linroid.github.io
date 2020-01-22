@@ -1,7 +1,7 @@
 title: Products
 ---
 - Z直播
-一个聚合了国内十多个直播平台的直播 APP，月活近 20w (2019.05)
+一个聚合了国内十多个直播平台的直播 APP
 Link: [Android](http://app.zhibo.at)
 
 - 体测成绩查询
