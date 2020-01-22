@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linroid.com/products/index.html</loc>
+    
+    <lastmod>2020-01-22T10:55:44.070Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linroid.com/2015/03/13/upload-android-library-to-moven-central/</loc>
     
     <lastmod>2019-12-21T15:56:22.031Z</lastmod>
@@ -65,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://linroid.com/products/index.html</loc>
-    
-    <lastmod>2019-12-21T15:53:13.874Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://linroid.com/categories/index.html</loc>
     
     <lastmod>2019-12-21T15:53:13.854Z</lastmod>
@@ -100,7 +100,7 @@
   </url>
   
   <url>
-    <loc>http://linroid.com/2018/08/10/onStop-executed-too-slowly/</loc>
+    <loc>http://linroid.com/2014/12/21/no-writing-so-long/</loc>
     
     <lastmod>2019-12-21T15:53:13.852Z</lastmod>
     
@@ -114,7 +114,7 @@
   </url>
   
   <url>
-    <loc>http://linroid.com/2014/12/21/no-writing-so-long/</loc>
+    <loc>http://linroid.com/2018/08/10/onStop-executed-too-slowly/</loc>
     
     <lastmod>2019-12-21T15:53:13.852Z</lastmod>
     
@@ -128,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://linroid.com/2015/07/24/dynamic-endpoint-when-debug-by-xip-io-and-gradle/</loc>
+    <loc>http://linroid.com/2015/01/27/compile-aosp-on-archlinux/</loc>
     
     <lastmod>2019-12-21T15:53:13.851Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://linroid.com/2015/01/27/compile-aosp-on-archlinux/</loc>
+    <loc>http://linroid.com/2015/07/24/dynamic-endpoint-when-debug-by-xip-io-and-gradle/</loc>
     
     <lastmod>2019-12-21T15:53:13.851Z</lastmod>
     
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://linroid.com/2016/11/09/Pit-of-Android-Orientation/</loc>
+    <loc>http://linroid.com/2016/11/25/Safety-after-invoke-Handler-removeCallbacks/</loc>
     
     <lastmod>2019-12-21T15:53:13.850Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://linroid.com/2016/11/25/Safety-after-invoke-Handler-removeCallbacks/</loc>
+    <loc>http://linroid.com/2016/11/09/Pit-of-Android-Orientation/</loc>
     
     <lastmod>2019-12-21T15:53:13.850Z</lastmod>
     
@@ -198,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://linroid.com/2013/10/10/2013-10-10-aidl/</loc>
+    <loc>http://linroid.com/2013/10/10/2013-10-10-to-be-calm/</loc>
     
     <lastmod>2019-12-21T15:53:13.847Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://linroid.com/2013/10/10/2013-10-10-to-be-calm/</loc>
+    <loc>http://linroid.com/2013/10/10/2013-10-10-aidl/</loc>
     
     <lastmod>2019-12-21T15:53:13.847Z</lastmod>
     
