@@ -10,7 +10,7 @@ categories: 作品
 <!-- HTML -->
 <blockquote class="blockquote-center">
 躲在某一时间，想念一段时间的掌纹；躲在某一地点，聆听四季的声音。
-<img alt="四季电台主播列表截图" src="http://7u2rtn.com1.z0.glb.clouddn.com/device-2015-01-22-224820.png" width="300px" />
+<img alt="四季电台主播列表截图" src="http://cdn.linroid.com/device-2015-01-22-224820.png" width="300px" />
 [下载地址](http://fir.im/sky31radio)
 
 </blockquote>

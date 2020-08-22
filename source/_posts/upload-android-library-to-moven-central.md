@@ -86,7 +86,7 @@ please comment on this ticket when you promoted your first release, thanks
 	$ gradle clean build uploadArchives
 	```
   出现如下结果就说明上传成功了:）
-	![执行成功](http://7u2rtn.com1.z0.glb.clouddn.com/QQ20150313-2@2x.png)
+	![执行成功](http://cdn.linroid.com/QQ20150313-2@2x.png)
   还没结束，此时你的库并没有发布.
   
  - __最后一步__：close staging repositories 
