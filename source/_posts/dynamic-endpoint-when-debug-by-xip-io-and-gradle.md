@@ -1,3 +1,4 @@
+---
 title: xip.io + gradle 在调试时动态设置服务端地址
 date: 2015-07-24 19:25:55
 tags:

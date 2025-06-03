@@ -1,3 +1,4 @@
+---
 title: '调用完 Handler#removeCallbacks() 就安全了吗?'
 date: 2016-11-25 11:51:31
 tags: 

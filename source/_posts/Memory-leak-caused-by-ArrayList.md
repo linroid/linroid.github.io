@@ -1,3 +1,4 @@
+---
 title: ArrayList 导致的内存泄露
 date: 2017-05-24 14:25:54
 tags:
