@@ -1,5 +1,5 @@
 # Header
-navname: Bentham's Blog
+navname: Lin's Blog
 
 # navigatior items
 nav:
@@ -7,15 +7,14 @@ nav:
   Categories: /category
   Tags: /tag
   About: /about
-
 # favicon
 favicon: /favicon.ico
 
 # Profile
-nickname: Jeremy Bentham
+nickname: linroid
 
 ### this variable is MarkDown form.
-description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** <br>Fusce eget urna vitae velit *eleifend interdum at ac* nisi.
+description: Enjoy building things, I code, build and explore
 avatar: /image/avatar.jpeg
 
 # main menu navigation
@@ -25,31 +24,13 @@ avatar: /image/avatar.jpeg
 links:
   Blog: /archives
   # Category:
-  # Tags: 
+  # Tags:
   # Link:
   # Resume:
-  # Publish:
-  # Trophy:
-  # Gallery:
-  # RSS:
-  # AliPay:
-  ZhiHu: https://www.zhihu.com/people/sirice
-  # LinkedIn:
-  # FaceBook:
-  # Twitter:
-  # Skype:
-  # CodeSandBox:
-  # CodePen:
-  # Sketch:
-  # Gitlab:
-  # Dribbble:
-  Instagram:
-  Reddit:
-  # YouTube:
-  # QQ:
-  # Weibo:
-  # WeChat:
-  Github: https://github.com/Siricee
+  LinkedIn: https://www.linkedin.com/in/linroid/
+  Twitter: https://x.com/linroid
+  Instagram: https://instagram.com/linroid/
+  Github: https://github.com/linroid
 
 # how links show: you have 2 choice--text or icon.
 links_text_enable: false
