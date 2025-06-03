@@ -104,5 +104,4 @@ theme: Chic
 deploy:
   type: git
   message: 'deploy'
-  repo: 
-    github: git@github.com:linroid/linroid.github.io.git,master
+  repo: git@github.com:linroid/linroid.github.io.git,page
