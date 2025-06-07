@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="linroid">
+
+
+
+    <meta name="description" content="Be creative">
+
+
+    <meta name="keywords" content="linroid">
+
+
+<title>[Android学习笔记] Service 学习 | Lin&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Lin&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Lin&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[Android学习笔记] Service 学习</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">linroid</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 6, 2013&nbsp;&nbsp;13:04:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Android%E5%BC%80%E5%8F%91/">Android开发</a>
+                            
+                                <a href="/categories/Android%E5%BC%80%E5%8F%91/%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6/">系统组件</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>#Service是andoird四大组件之一<br>##继承Service类要重写以下方法：</p>
+<ul>
+<li><code>onBind()</code>: 当在其他组件中调用<code>bindService()</code>方法启动Service时会回调该方法</li>
+<li><code>onStartCommand()</code>:当在其他组件中调用<code>startService()</code>方法启动Service时会回调该方法</li>
+<li><code>onUnBind()</code>:当与Service绑定的组件结束时会回调该方法</li>
+<li><code>onDestory()</code>:当系统由于内存低等原因杀掉Service时会回调该方法。<br>重写这些方法的时候不必像Activity中那样调用父类中该方法。</li>
+</ul>
+<span id="more"></span>
+<p>#Service由”Started”和”Bound”两种组成:</p>
+<ul>
+<li>Started: 当在其他组件中调用 <code>startService()</code>启动service，这个service是”Started”的;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(<span class="built_in">this</span>, SimpleService.class);</span><br><span class="line">startService(intent);</span><br></pre></td></tr></table></figure>
+<p>此时，该Service可能会无限地执行下去，除非系统由于内存低、释放资源等终止它（会调用该service的<code>onDestory()</code>方法）。当调用<code>startService()</code>方法时，系统会回调这个Service的<code>onStartCommand()</code>方法,这个方法的返回值为int类型,用来告诉系统当系统kill掉这个service时，系统如何继续这个service，有三个值可供选择:</p>
+<ul>
+<li><p><code>START_NOT_STICKY</code>，系统不会重新创建这个service，除非有pending intent要传递</p>
+</li>
+<li><p><code>START_STICKY</code>,系统会重新创建这个Service，但是不会重新传递最后一个intent也就是说，系统在回调onStartCommand()方法时，参数intent会为null，除非有pending intent去启动service，系统才会传递intent,</p>
+</li>
+<li><p><code>START_REDELIVER_INTENT</code>系统会重新创建这个Service，并且会传递最后一个intent<br>“Started”的Service当onStartCommand()方法返回后，系统不会结束这个Service。 调用<code>stopSelf()</code>或<code>stopService()</code>方法可以停止该Service</p>
+</li>
+<li><p>Bound:在其他组件中调用<code>bindService()</code>方法启动，此时Service与启动它的组件生命周期绑定在一起，系统会回调service的<code>onBind()</code>方法返回一个IBinder对象，通过IBinder接口，Service可以与其他进程进行数据交互 (interprocess communication(IPC)).当和它绑定的所有组件都结束时，系统会回调它的<code>onUnbind()</code>方法。一个Service可以和多个组件绑定，但只有第一个组件和它绑定时系统才会调用它的onBind()方法.</p>
+</li>
+</ul>
+<p>##创建”Started”Service时有两个类可以作为父类：</p>
+<ul>
+<li>Service 可以同时处理多个intent，如果要处理耗时和阻塞的任务，需要在子线程中进行，否则会出现ANR，因为Service使用的是应用的主线程，并没有在独立的线程中进行。</li>
+<li>IntentService Service 的子类，只需实现&#96;onHandleIntent（）方法，如果service不需要同时处理多个intent，这将是最好的选择。会创建新的线程，当任务执行完毕后会自动结束Service</li>
+</ul>
+<p>#Service的生命周期</p>
+<ul>
+<li>started Service : 其他组件调用startService()开始到调用自身调用stopSelf()或其他组件调用stopService()结束，即整个生命周期发生在系统开始回调Service的onCreate()方法到回调onDestory方法的结束。</li>
+<li>bound Service :  其他组件调用bindService()开始到调用自身stopSelf或与它绑定的所有组件都调用了unbindService()结束<br><img src="http://developer.android.com/images/service_lifecycle.png" alt="Service的生命周期"><br>两种方式创建的Service并不是完全分开的可以绑定一个已经started 的Service，两种方式创建的Service，系统都会调用onCreate()和onDestory方法</li>
+</ul>
+<p>##参考资料:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://developer.android.com/guide/components/services.html">Android Guides</a></li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>linroid</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://linroid.com/2013/10/06/2013-10-06-android-service-tutorial/">http://linroid.com/2013/10/06/2013-10-06-android-service-tutorial/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Android/"># Android</a>
+                    
+                        <a href="/tags/Service/"># Service</a>
+                    
+                        <a href="/tags/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"># 组件通信</a>
+                    
+                        <a href="/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"># 生命周期</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2013/10/10/2013-10-10-stay-calm/">静下来</a>
+            
+            
+            <a class="next" rel="next" href="/2013/10/02/2013-10-02-android-studio-compile-speed/">提升 Android Studio 编译速度的实用技巧</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© linroid | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

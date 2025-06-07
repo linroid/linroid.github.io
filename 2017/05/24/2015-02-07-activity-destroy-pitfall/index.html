@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="linroid">
+
+
+
+    <meta name="description" content="Be creative">
+
+
+    <meta name="keywords" content="linroid">
+
+
+<title>Activity 销毁的延迟 | Lin&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Lin&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Lin&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Activity 销毁的延迟</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">linroid</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">May 24, 2017&nbsp;&nbsp;16:32:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Android%E5%BC%80%E5%8F%91/">Android开发</a>
+                            
+                                <a href="/categories/Android%E5%BC%80%E5%8F%91/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>先看一张按下 Back 键之后，Activity 生命周期回调的日志截图：<br><img src="/images/posts/activity-back-pressed.png" alt="ActivityBackPressed"><br>从日志中可以看到当按下 Back 键时，当前的 Activity 会马上回调 onPause() 方法，而 onStop() 是在 MainActivity 的 onResume()之后才调用，onPause() 与 onStop()之间相隔了大约 300ms，也就是说 Activity 不是马上被销毁的。</p>
+<p>再看另一个快速重新打开 <code>LifeActivity</code> 的 Case：<br><img src="/images/posts/quick-reopen-activity.png" alt="QuickReopenActivity"></p>
+<blockquote>
+<p>这里我采用代码模拟快速重新打开 <code>LifeActivity</code>，finish() 后延迟 300ms 再启动 <code>LifeActivity</code>。因为我们的 Activity 里没做什么事，所以很难手动重现快速重新打开 Activity 的异常 Case，而实际项目因为逻辑复杂，往往在1~2s或者更长的时间里很容易复现这种情况。</p>
+</blockquote>
+<p>出现了诡异的事：LifeActivity[33732136] 是旧的 Activity，但它却在新的 LifeActivity[212157058] 显示之后才被销毁的，看到这个可能你已经心头一凉。这会导致什么问题呢？这会让我们依赖 Activity 生命周期回调来做资源回收的代码变得不可靠。</p>
+<p>举个栗子：如果我们在 onStart() 中启动相机在 onStop() 中关闭相机，正常重新打开这个页面时相机的状态操作：打开 -&gt; 关闭 -&gt; 打开，快速重新打开这个 Activity 时就可能不是这个顺序了：打开-&gt;打开-&gt;关闭。然后用户就遭殃了，他将无法正常使用你的应用了，而用户只是因为手速过快。</p>
+<span id="more"></span>
+
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>那么为什么 onPause() 是马上被调用，而 onStop() 和 onDestroy() 却被延迟这么久呢？</p>
+<blockquote>
+<p>关于 Activity 销毁流程的源码我不会做详细分析，具体可以查看相关源码或者搜索其他人的文章看下</p>
+</blockquote>
+<p>调用 finish 方法后会经过以下流程向 <code>ActivityManagerService</code> 请求销毁当前 Activity：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MyActivity.finish() </span><br><span class="line">Activity.finish() </span><br><span class="line">ActivityManagerNative.getDefault().finishActivity() </span><br><span class="line">ActivityManagerService.finishActivity() </span><br><span class="line">ActivityStack.requestFinishActivityLocked() </span><br><span class="line">ActivityStack.finishActivityLocked() </span><br><span class="line">ActivityStack.startPausingLocked() </span><br></pre></td></tr></table></figure>
+
+<p>然后 <code>ActivityManagerService</code> 就会请求执行当前 Activity 的 onPause() 方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">IApplicationThread.schedulePauseActivity() </span><br><span class="line">ActivityThread.schedulePauseActivity() </span><br><span class="line">ActivityThread.sendMessage() </span><br><span class="line">ActivityThread.H.sendMessage() </span><br><span class="line">ActivityThread.H.handleMessage() </span><br><span class="line">ActivityThread.handlePauseActivity() </span><br><span class="line">ActivityThread.performPauseActivity() </span><br><span class="line">Instrumentation.callActivityOnPause() </span><br><span class="line">Activity.performPause() </span><br><span class="line">Activity.onPause() </span><br><span class="line">ActivityManagerNative.getDefault().activityPaused() </span><br><span class="line">ActivityManagerService.activityPaused() </span><br><span class="line">ActivityStack.activityPausedLocked() </span><br><span class="line">ActivityStack.completePauseLocked() </span><br></pre></td></tr></table></figure>
+<p>所以 onPause() 是立即被执行的，执行完 onPause() 后并没有马上销毁 Activity，而是先让一个 Activity 显示出来，这个 Activity 可能是当前应用 Activity 栈中的一个 Activity 也可能是 Launcher 或者其他应用的 Activity，不管是哪个都大同小异，在上面的 Case 中就是 MainActivity。</p>
+<p>执行上一个 Activity 即 MainActivity 的 onResume()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ActivityStack.resumeTopActivityLocked() </span><br><span class="line">ActivityStack.resumeTopInnerLocked() </span><br><span class="line">IApplicationThread.scheduleResumeActivity() </span><br><span class="line">ActivityThread.scheduleResumeActivity() </span><br><span class="line">ActivityThread.sendMessage() </span><br><span class="line">ActivityTherad.H.sendMessage() </span><br><span class="line">ActivityThread.H.handleMessage() </span><br><span class="line">ActivityThread.handleResumeActivity() </span><br><span class="line">Activity.performResume() </span><br><span class="line">Activity.performRestart() </span><br><span class="line">Instrumentation.callActivityOnRestart() </span><br><span class="line">Activity.onRestart() </span><br><span class="line">Activity.performStart() </span><br><span class="line">Instrumentation.callActivityOnStart() </span><br><span class="line">Activity.onStart() </span><br><span class="line">Instrumentation.callActivityOnResume() </span><br><span class="line">Activity.onResume() </span><br></pre></td></tr></table></figure>
+
+<p>执行完上一个 Activity 的 onResume 之后，该进行 Activity 的销毁操作了吧？<br>通过反向分析，发现 Activity 的销毁时通过请求 ActivityManagerService 的 activityIdle() 方法，销毁流程如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Looper.myQueue().addIdleHandler(<span class="keyword">new</span> <span class="title class_">Idler</span>()) </span><br><span class="line">ActivityManagerNative.getDefault().activityIdle() </span><br><span class="line">ActivityManagerService.activityIdle() </span><br><span class="line">ActivityStackSupervisor.activityIdleInternalLocked() </span><br><span class="line">ActivityStack.destroyActivityLocked() </span><br><span class="line">IApplicationThread.scheduleDestoryActivity() </span><br><span class="line">ActivityThread.scheduleDestoryActivity() </span><br><span class="line">ActivityThread.sendMessage() </span><br><span class="line">ActivityThread.H.sendMessage() </span><br><span class="line">ActivityThread.H.handleMessage() </span><br><span class="line">ActivityThread.handleDestoryActivity() </span><br><span class="line">ActivityThread.performDestoryActivity() </span><br><span class="line">Activity.performStop() </span><br><span class="line">Instrumentation.callActivityOnStop() </span><br><span class="line">Activity.onStop() </span><br><span class="line">Instrumentation.callActivityOnDestory() </span><br><span class="line">Activity.performDestory() </span><br><span class="line">Acitivity.onDestory() </span><br><span class="line">ActivityManagerNative.getDefault().activityDestoryed() </span><br><span class="line">ActivityManagerService.activityDestoryed() </span><br><span class="line">ActivityStack.activityDestoryedLocked() </span><br></pre></td></tr></table></figure>
+
+<p>这个 Idler 实现的是 <code>MessageQueue.IdleHandler</code>，IdleHandler 会等到 MessageQueue 中当前没有可执行的消息时才会执行，也就是说 Activity 会一直等待主线程消息队列中当前消息都处理完毕了才会进行销毁，这也就是 Activity 的销毁不是立即执行的根本原因。</p>
+<h1 id="如何避免"><a href="#如何避免" class="headerlink" title="如何避免"></a>如何避免</h1><p>手速快并不是用户的锅，要避免这种情况，可以用个静态变量保存当前 Activity，并且在销毁的时候判断下是不是与保存的一致，以下给出示例代码，如果你有更好的方案，欢迎告诉我 :)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LifeActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> LifeActivity sCurrentLifeActivity;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        sCurrentLifeActivity = <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onStart</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onStart();</span><br><span class="line">        someResource.open();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onStop</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onStop();</span><br><span class="line">        <span class="keyword">if</span> (sCurrentLifeActivity == <span class="built_in">this</span>) &#123;</span><br><span class="line">            someResource.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        <span class="keyword">if</span> (sCurrentLifeActivity == <span class="built_in">this</span>) &#123;</span><br><span class="line">            sCurrentLifeActivity = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>linroid</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://linroid.com/2017/05/24/2015-02-07-activity-destroy-pitfall/">http://linroid.com/2017/05/24/2015-02-07-activity-destroy-pitfall/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Android/"># Android</a>
+                    
+                        <a href="/tags/%E8%B8%A9%E5%9D%91/"># 踩坑</a>
+                    
+                        <a href="/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"># 生命周期</a>
+                    
+                        <a href="/tags/Activity/"># Activity</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2018/08/10/2018-07-23-android-onstop-slow/">Activity 的 onStop 居然需要 10s 才会被执行？</a>
+            
+            
+            <a class="next" rel="next" href="/2017/01/23/2016-12-31-yearly-summary/">我的2016</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© linroid | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
