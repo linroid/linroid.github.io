@@ -228,7 +228,7 @@
         <div class="post-content">
             <p>由于我们的应用依赖 Activity 的 onStop 来停止播放器，近期发现退出直播间后，声音居然残留10s 左右，通过日志发现 Activity 的 onStop 在退出界面后需要10s左右才会被执行，该如何定位这个问题呢？</p>
 <span id="more"></span>
-<p>Activity 的 onStop 是放到 <code>IdleHandler</code> 执行的，所以退出界面后 onStop 不会立即执行，而是等到主线程中当前没有消息要执行的时候才会执行，具体可见我的另一篇文章分析：<a href="https://linroid.com/2017/05/24/Pit-of-Activity-destory/">Activity 销毁的延迟</a>。但必现 10s 左右才被执行肯定是异常的，可能有消息导致主线程一直没有 处理 IdleHandler，为验证这一点，可以在 onPause 的时候添加一个 IdleHandler 到主线程消息队列中</p>
+<p>Activity 的 onStop 是放到 <code>IdleHandler</code> 执行的，所以退出界面后 onStop 不会立即执行，而是等到主线程中当前没有消息要执行的时候才会执行，具体可见我的另一篇文章分析：<a href="/2017/05/24/activity-destroy-pitfall/">Activity 销毁的延迟</a>。但必现 10s 左右才被执行肯定是异常的，可能有消息导致主线程一直没有 处理 IdleHandler，为验证这一点，可以在 onPause 的时候添加一个 IdleHandler 到主线程消息队列中</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onPause</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>.onPause();</span><br><span class="line">    Looper.myQueue().addIdleHandler(<span class="keyword">new</span> <span class="title class_">MessageQueue</span>.IdleHandler() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">queueIdle</span><span class="params">()</span> &#123;</span><br><span class="line">            Log.i(TAG, <span class="string">&quot;queueIdle after onPause&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>结果果然是在 onStop 之后才会被执行，所以可以确认是由于主线程一直有没有执行 IdleHandler 导致的，初步怀疑是有地方一直在往主线程 Looper 中 添加消息，接下来就需要定位是什么消息导致主线程一直处于非空闲状态。</p>
@@ -269,7 +269,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://linroid.com/2018/08/10/2018-07-23-android-onstop-slow/">http://linroid.com/2018/08/10/2018-07-23-android-onstop-slow/</a></span>
+                        <span><a href="http://linroid.com/2018/08/10/2018-08-10-android-onstop-slow/">http://linroid.com/2018/08/10/2018-08-10-android-onstop-slow/</a></span>
                     </p>
                 
                 
@@ -315,7 +315,7 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2017/05/24/2015-02-07-activity-destroy-pitfall/">Activity 销毁的延迟</a>
+            <a class="next" rel="next" href="/2017/05/24/2017-05-24-activity-destroy-pitfall/">Activity 销毁的延迟</a>
             
         </section>
 

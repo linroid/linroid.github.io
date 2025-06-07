@@ -17,7 +17,7 @@
     <meta name="keywords" content="linroid">
 
 
-<title>Archlinux 下编译 AOSP 小记 | Lin&#39;s Blog</title>
+<title>xip.io + gradle 在调试时动态设置服务端地址 | Lin&#39;s Blog</title>
 
 
 
@@ -134,7 +134,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Archlinux 下编译 AOSP 小记</h1>
+            <h1 class="post-title">xip.io + gradle 在调试时动态设置服务端地址</h1>
             
                 <div class="post-meta">
                     
@@ -143,16 +143,16 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 27, 2015&nbsp;&nbsp;9:51:28</a>
+                        Date: <a href="#">July 24, 2015&nbsp;&nbsp;19:25:55</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Android%E5%BC%80%E5%8F%91/">Android开发</a>
+                                <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a>
                             
-                                <a href="/categories/Android%E5%BC%80%E5%8F%91/%E7%B3%BB%E7%BB%9F%E5%AE%9A%E5%88%B6/">系统定制</a>
+                                <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F/">构建系统</a>
                             
                         </span>
                     
@@ -161,8 +161,24 @@
         </header>
 
         <div class="post-content">
-            <p>我用的是 fish shell，首先要进入到 bash shell:<br>	<code>bash</code><br>切换jdk版本到1.7<br>	<code>sudo archlinux-java set java-7-openjdk</code><br>切换python版本到2.x<br>	<code>sudo ln -sf /usr/bin/python2.7  /usr/bin/python</code><br>安装依赖库<br>	<code>yaourt -S libtinfo</code></p>
+            <blockquote>
+<p>日常开发中，如果服务端在本地，通常可通过改hosts、写死IP、动态域名等方式来设置服务端地址，但总觉很麻烦，不灵活；比如更换网络导致IP变化，就得重新设置。<br>今天突然想到，利用xip.io 和 gradle来自动设置服务端地址</p>
+</blockquote>
 <span id="more"></span>
+<p> <a target="_blank" rel="noopener" href="http://xip.io/">xip.io</a> 是一个直接使用域名来指定 IP 的域名服务，无需手动设置 DNS，同时也不需要任何注册。这解决了使用 IP 无法使用多个 Virtual Host 而使用域名又得很麻烦改地DNS的问题。</p>
+<p> xip.io 支持 <code>&#123;custom_prefix&#125;.&#123;host_ip&#125;.xip.io</code> 的域名格式，解析出来的 ip 就是 {host_id}。如:</p>
+<p> <code>exmple.com.127.0.0.1.xip.ip</code> 会解析为<code>127.0.0.1</code></p>
+<p> 下面进行 gradle 配置:</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> buildTypes &#123;</span><br><span class="line">  debug &#123;</span><br><span class="line">    //...</span><br><span class="line">    def hostIp = InetAddress.getLocalHost().getHostAddress()</span><br><span class="line">    buildConfigField &quot;String&quot;, &quot;ENDPOINT&quot;, &quot;\&quot;http://example.com.$&#123;hostIp&#125;.xip.io/api\&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  release &#123;</span><br><span class="line">	//...</span><br><span class="line">    buildConfigField &quot;String&quot;, &quot;ENDPOINT&quot;, &quot;\&quot;http://example.com/api\&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 在 debug 下，gradle 会获取当前电脑的 IP，然后写入到 BuildConfig 类中的 <code>ENDPOINT</code> 属性。gradle sync 一下后，<code>BuildConfig.ENDPOINT</code> 就被赋值为 <code>http://example.com.$&#123;hostIp&#125;.xip.io/api</code></p>
+<p> 当然，还可以放到 xml 文件中:)</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resValue &quot;string&quot;, &quot;host_url&quot;, &quot;http://example.com.$&#123;hostIp&#125;.xip.io&quot;;</span><br></pre></td></tr></table></figure>
+
+
+<p> 最后记得在 apache&#x2F;nginx 等配置 Virtual Host 时使用宽域名，如 Nginx 中:</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server_name example.com.*</span><br></pre></td></tr></table></figure>
+
         </div>
 
         
@@ -176,7 +192,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://linroid.com/2015/01/27/2014-12-21-compile-aosp-archlinux/">http://linroid.com/2015/01/27/2014-12-21-compile-aosp-archlinux/</a></span>
+                        <span><a href="http://linroid.com/2015/07/24/2015-07-24-gradle-xip-io-debug/">http://linroid.com/2015/07/24/2015-07-24-gradle-xip-io-debug/</a></span>
                     </p>
                 
                 
@@ -200,15 +216,13 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Android/"># Android</a>
+                        <a href="/tags/Android-Studio/"># Android Studio</a>
                     
-                        <a href="/tags/AOSP/"># AOSP</a>
+                        <a href="/tags/gradle/"># gradle</a>
                     
-                        <a href="/tags/Arch-Linux/"># Arch Linux</a>
+                        <a href="/tags/%E5%B7%A5%E5%85%B7/"># 工具</a>
                     
-                        <a href="/tags/%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"># 源码编译</a>
-                    
-                        <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"># 系统开发</a>
+                        <a href="/tags/%E8%B0%83%E8%AF%95/"># 调试</a>
                     
                         
                 </span>
@@ -221,10 +235,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2015/01/29/2015-01-26-fragment-pager-adapter-update/">调用 FragmentPagerAdapter 的 notifyDataSetChanged() 方法视图未更新</a>
+                <a class="prev" rel="prev" href="/2016/02/26/2016-02-26-switchcompat-preference-animation/">设置界面中 SwitchCompat 无动画效果</a>
             
             
-            <a class="next" rel="next" href="/2015/01/22/2015-01-22-arraylist-memory-leak/">ArrayList 引发的内存泄漏分析</a>
+            <a class="next" rel="next" href="/2015/07/18/2015-07-18-git-case-sensitive/">Git 在 OSX 中的提交忽略文件名称大小写</a>
             
         </section>
 
