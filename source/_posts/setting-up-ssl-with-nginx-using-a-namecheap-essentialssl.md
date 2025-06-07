@@ -5,7 +5,7 @@ tags:
 	- Blog
 categories: 瞎折腾
 ---
-![使用NameCheap的SSL证书](/media/setting-up-ssl-with-nginx-using-a-namecheap-essentialssl/20141221121928.png)
+![使用NameCheap的SSL证书](/images/posts/nginx-ssl/ssl-config.png)
 利用之前申请了 GitHub 的学生礼包免费注册了 [alwen.me] 域名，另外一年免费的 ssl 证书也申请了.
 <!--more-->
 在服务器上生成用于申请证书的 CSR 和私钥

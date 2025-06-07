@@ -55,5 +55,5 @@ categories: 学习笔记
         });
     }
 ```
-![Action Bar is showing](/media/2013-10-02-use-overlaying-action-bar/screenshot_1.png)
-![Action Bar is hiding](/media/2013-10-02-use-overlaying-action-bar/screenshot_2.png)
+![Action Bar is showing](/images/posts/overlaying-action-bar/normal.png)
+![Action Bar is hiding](/images/posts/overlaying-action-bar/overlaying.png)

@@ -5,7 +5,7 @@ date: 2013-10-10 14:56
 comments: true
 categories: 随笔
 ---
-![静](/media/2013-10-10-to-be-calm/pic.jpg)
+![静](/images/posts/calm/calm.jpg)
 
 自己太浮躁了，总是爱想太多，不能专心做某些事。  
 努力让自己静下来。   
