@@ -1,4 +1,3 @@
-
 ---
 title: 提交 library 项目到 Maven Central
 date: 2015-03-13 10:51:42
@@ -87,7 +86,7 @@ please comment on this ticket when you promoted your first release, thanks
 	$ gradle clean build uploadArchives
 	```
   出现如下结果就说明上传成功了:）
-	![执行成功](http://cdn.linroid.com/QQ20150313-2@2x.png)
+	![执行成功](/images/posts/maven-central-success.png)
   还没结束，此时你的库并没有发布.
   
  - __最后一步__：close staging repositories 
