@@ -1,8 +1,14 @@
 ---
-title: "设置界面中 SwitchCompat 无动画效果"
+title: 设置界面中 SwitchCompat 无动画效果
 date: 2016-02-26 13:48:27
 tags:
-categories: 遇过的坑
+  - Android
+  - SwitchCompat
+  - Preference
+  - 动画
+categories:
+  - Android开发
+  - UI组件
 ---
 ## 问题分析
  Support library 的 `SwitchCompat.java` :

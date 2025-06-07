@@ -1,10 +1,14 @@
 ---
 title: Git 在 OSX 中的提交忽略文件名称大小写
 date: 2015-07-18 23:21:20
-tags: 
-  - git
+tags:
+  - Git
+  - 版本控制
   - OSX
-categories: 遇过的坑
+  - 大小写敏感
+categories:
+  - 开发工具
+  - Git
 ---
 ![image](/images/posts/git-ignorecase-1.png)
 看到[drakeet](https://github.com/drakeet)的[妹纸](https://github.com/drakeet/Meizhi) App，想写个 iOS 版拿来练手。开始时项目命名为 `MeiZhi`，然后发现drakeet的是`Meizhi`，所以我也改为`Meizhi`来保持一致。在 GitHub 上查看时发现名称并没有改变，原因是git默认忽略了大小写。

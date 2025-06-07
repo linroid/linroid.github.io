@@ -1,9 +1,14 @@
 ---
-title: 「Wrapper」让你更愉快地调用 Listener
-date: 2017-03-19 14:11:22
-tags: 
- - Android
- - 造轮子
+title: Wrapper 设计模式在 Android 开发中的应用
+date: 2014-12-21 17:15:27
+tags:
+  - 设计模式
+  - Wrapper
+  - Android
+  - 编程实践
+categories:
+  - Android开发
+  - 编程思想
 ---
 
  > 在 [GitHub](https://github.com/linroid/Wrapper) 查看

@@ -2,9 +2,13 @@
 title: xip.io + gradle 在调试时动态设置服务端地址
 date: 2015-07-24 19:25:55
 tags:
- - gradle
- - Android Studio
-categories: 瞎折腾
+  - gradle
+  - Android Studio
+  - 调试
+  - 工具
+categories:
+  - 开发工具
+  - 构建系统
 ---
 
 > 日常开发中，如果服务端在本地，通常可通过改hosts、写死IP、动态域名等方式来设置服务端地址，但总觉很麻烦，不灵活；比如更换网络导致IP变化，就得重新设置。

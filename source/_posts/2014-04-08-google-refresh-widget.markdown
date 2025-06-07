@@ -1,12 +1,17 @@
 ---
 layout: post
-title: "Google 发布的官方刷新组件：SwipeRefreshLayout"
+title: Google 发布的官方刷新组件：SwipeRefreshLayout
 date: 2014-04-08 18:12
 comments: true
-tags: 
- - Android
- - SwipeRefreshLayout
-categories: 瞎折腾 
+tags:
+  - Android
+  - SwipeRefreshLayout
+  - 下拉刷新
+  - Material Design
+  - 用户体验
+categories:
+  - Android开发
+  - UI组件
 ---
 
 谷歌终于发布了官方的下拉刷新组件：[SwipeRefreshLayout](http://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)，它被包含在了19.1.0版本的Support Library中。`SwipeRefreshLayout`在使用上非常简单,只需要把要刷新的可滚动组件放到`SwipeRefreshLayout` 中,

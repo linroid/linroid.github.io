@@ -1,10 +1,15 @@
 ---
 title: Archlinux 下编译 AOSP 小记
 date: 2015-01-27 09:51:28
-tags: 
- - linux
- - AOSP
-categories: 瞎折腾
+tags:
+  - Android
+  - AOSP
+  - Arch Linux
+  - 源码编译
+  - 系统开发
+categories:
+  - Android开发
+  - 系统定制
 ---
 
 我用的是 fish shell，首先要进入到 bash shell:

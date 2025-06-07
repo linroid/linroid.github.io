@@ -1,10 +1,14 @@
 ---
-title: 利用 GitHub 的 Webhook 部署博客
-date: 2015-01-21 00:01:28
-tags: 
- - Github
- - Blog
-categories: 瞎折腾
+title: 使用 GitHub Webhook 自动部署 Hexo 博客
+date: 2014-12-21 17:15:27
+tags:
+  - GitHub
+  - Webhook
+  - Hexo
+  - 自动化部署
+categories:
+  - 博客搭建
+  - 自动化
 ---
 GitHub 现在比较难打开了，决定把博客放到自己的 vps 上。
 当又想同步到 GitHub 上，如果每次都要手动到 vps 上执行 pull，那太麻烦了！！！

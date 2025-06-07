@@ -2,8 +2,14 @@
 title: 使用 NameCheap 的 SSL 证书
 date: 2014-12-21 01:14:35
 tags:
-	- Blog
-categories: 瞎折腾
+  - Nginx
+  - SSL
+  - HTTPS
+  - 安全
+  - NameCheap
+categories:
+  - Web开发
+  - 服务器配置
 ---
 ![使用NameCheap的SSL证书](/images/posts/nginx-ssl/ssl-config.png)
 利用之前申请了 GitHub 的学生礼包免费注册了 [alwen.me] 域名，另外一年免费的 ssl 证书也申请了.

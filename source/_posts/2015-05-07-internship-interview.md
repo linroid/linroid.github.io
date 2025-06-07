@@ -1,8 +1,14 @@
 ---
 title: 找实习的那点事
 date: 2015-05-22 17:15:27
-tags: 实习
-categories: 整理总结
+tags:
+  - 实习
+  - 面试
+  - 求职
+  - 经验总结
+categories:
+  - 求职经验
+  - 面试总结
 ---
 
 ![阿里包包~](/images/posts/internship-alibaba-bag.jpg)

@@ -2,7 +2,13 @@
 title: Android Orientation 的坑
 date: 2016-11-09 10:41:40
 tags:
- - 踩坑
+  - Android
+  - Orientation
+  - 屏幕适配
+  - 踩坑
+categories:
+  - Android开发
+  - UI组件
 ---
 　　最近在做 [Bigo Live](http://www.bigo.sg/index_pc.html) 直播间的横屏适配，横屏和竖屏下会有一些状态的差异。但我们的应用在横屏下，切换后台再回来后，发现一些状态显示不对。
 <!--more-->

@@ -1,8 +1,13 @@
 ---
 title: Activity 销毁的延迟
 tags:
+  - Android
+  - Activity
+  - 生命周期
   - 踩坑
-categories: []
+categories:
+  - Android开发
+  - 性能优化
 date: 2017-05-24 16:32:00
 ---
 

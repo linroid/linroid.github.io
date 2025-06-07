@@ -4,8 +4,13 @@ title: "[Android 学习笔记]AIDL"
 date: 2013-10-10 22:35
 comments: true
 tags:
- - Android
-categories: 学习笔记
+  - Android
+  - AIDL
+  - 进程通信
+  - 跨进程
+categories:
+  - Android开发
+  - 系统组件
 ---
 
 >简略地翻译一遍谷歌的教程，加深自己的理解。。。   

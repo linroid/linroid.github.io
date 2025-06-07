@@ -2,6 +2,14 @@
 title: Activity 的 onStop 居然需要 10s 才会被执行？
 date: 2018-08-10 10:15:27
 tags:
+  - Android
+  - Activity
+  - 生命周期
+  - 性能优化
+  - 踩坑
+categories:
+  - Android开发
+  - 源码分析
 ---
 
 由于我们的应用依赖 Activity 的 onStop 来停止播放器，近期发现退出直播间后，声音居然残留10s 左右，通过日志发现 Activity 的 onStop 在退出界面后需要10s左右才会被执行，该如何定位这个问题呢？

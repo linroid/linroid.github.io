@@ -3,7 +3,11 @@ layout: post
 title: "静下来"
 date: 2013-10-10 14:56
 comments: true
-categories: 随笔
+tags:
+  - 生活感悟
+  - 心态调整
+categories:
+  - 生活随笔
 ---
 ![静](/images/posts/calm/calm.jpg)
 

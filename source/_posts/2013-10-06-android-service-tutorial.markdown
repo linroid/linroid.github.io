@@ -3,10 +3,14 @@ layout: post
 title: "[Android学习笔记] Service 学习"
 date: 2013-10-06 13:04
 comments: true
-tas:
- - Android
- - Service
-categories: 学习笔记
+tags:
+  - Android
+  - Service
+  - 组件通信
+  - 生命周期
+categories:
+  - Android开发
+  - 系统组件
 ---
 #Service是andoird四大组件之一  
 ##继承Service类要重写以下方法：

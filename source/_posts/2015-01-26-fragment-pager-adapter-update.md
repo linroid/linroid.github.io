@@ -1,8 +1,14 @@
 ---
-title: "调用 FragmentPagerAdapter 的 notifyDataSetChanged() 方法视图未更新"
+title: 调用 FragmentPagerAdapter 的 notifyDataSetChanged() 方法视图未更新
 date: 2015-01-29 21:54:39
-tags: Fragment
-categories: 遇过的坑
+tags:
+  - Android
+  - Fragment
+  - ViewPager
+  - 踩坑
+categories:
+  - Android开发
+  - UI组件
 ---
 
 学校在考完试后给我们加了一周的 Android 课，本来考完试很累了，还一天不让休息，天天起早去上课π__π。最后交课程设计, 模仿彩虹天气写一个天气应用,下面是我们组做的:

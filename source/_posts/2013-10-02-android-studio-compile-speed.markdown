@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "加快Android Studio 的编译"
-date: 2013-08-20 11:05
-comments: true
-tag: Android Studio
-categories: 遇过的坑
+title: 提升 Android Studio 编译速度的实用技巧
+date: 2013-10-02 17:15:27
+tags:
+  - Android
+  - Android Studio
+  - 编译优化
+  - 开发效率
+  - Gradle
+categories:
+  - Android开发
+  - 工具优化
 ---
 Android Studio 用了这么久了，亮点就不说了，唯一蛋疼的就是编译很慢，而且在未更改任何代码的时候，点运行任然重新编译。  
 昨天 Google 了一下，找到以下两个讨论：  

@@ -3,8 +3,14 @@ layout: post
 title: "给 Genymotion 安装 Gapps"
 date: 2014-01-06 21:24
 comments: true
-tags: Genymotion
-categories: 瞎折腾
+tags:
+  - Genymotion
+  - GApps
+  - Android
+  - 模拟器
+categories:
+  - Android开发
+  - 工具使用
 ---
 Genymotion 模拟器阉割了 Google 服务,  需要手动装上。  
 <!--more-->
