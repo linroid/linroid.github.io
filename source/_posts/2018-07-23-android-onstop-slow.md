@@ -14,7 +14,7 @@ categories:
 
 由于我们的应用依赖 Activity 的 onStop 来停止播放器，近期发现退出直播间后，声音居然残留10s 左右，通过日志发现 Activity 的 onStop 在退出界面后需要10s左右才会被执行，该如何定位这个问题呢？
 <!--more-->
-Activity 的 onStop 是放到 `IdleHandler` 执行的，所以退出界面后 onStop 不会立即执行，而是等到主线程中当前没有消息要执行的时候才会执行，具体可见我的另一篇文章分析：[Activity 销毁的延迟](https://linroid.com/2017/05/24/Pit-of-Activity-destory/)。但必现 10s 左右才被执行肯定是异常的，可能有消息导致主线程一直没有 处理 IdleHandler，为验证这一点，可以在 onPause 的时候添加一个 IdleHandler 到主线程消息队列中
+Activity 的 onStop 是放到 `IdleHandler` 执行的，所以退出界面后 onStop 不会立即执行，而是等到主线程中当前没有消息要执行的时候才会执行，具体可见我的另一篇文章分析：[Activity 销毁的延迟](/2015/02/07/activity-destroy-pitfall/)。但必现 10s 左右才被执行肯定是异常的，可能有消息导致主线程一直没有 处理 IdleHandler，为验证这一点，可以在 onPause 的时候添加一个 IdleHandler 到主线程消息队列中
 
 ```java
 @Override
