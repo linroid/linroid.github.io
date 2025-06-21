@@ -4,9 +4,9 @@ navname: Lin's Blog
 # navigatior items
 nav:
   Posts: /archives
-  # Categories: /category
-  # Tags: /tag
-  About: /about
+  Categories: /category
+  Tags: /tag
+  # About: /about
 # favicon
 favicon: /favicon.ico
 
